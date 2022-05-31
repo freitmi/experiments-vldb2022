@@ -1,0 +1,1 @@
+copy orders from '/data/tpch/initial/orders.tbl' delimiter '|';

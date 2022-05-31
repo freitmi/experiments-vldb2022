@@ -1,0 +1,1 @@
+copy customer from '/data/tpch/initial/customer.tbl' delimiter '|';

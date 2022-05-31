@@ -1,0 +1,6 @@
+{
+  "warmup_time": 30,
+  "measure_time": 30,
+  "generate_remote_accesses": true,
+  "generate_user_rollbacks": true
+}

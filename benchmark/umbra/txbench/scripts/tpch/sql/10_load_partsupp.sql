@@ -1,0 +1,1 @@
+copy partsupp from '/data/tpch/initial/partsupp.tbl' delimiter '|';

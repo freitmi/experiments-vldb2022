@@ -1,0 +1,31 @@
+{
+  "host": "txbench-umbra",
+  "port": "5432",
+  "username": "postgres",
+  "password": "postgres",
+  "schema_scripts": [
+    "/scripts/00_create_subscriber.sql",
+    "/scripts/01_create_access_info.sql",
+    "/scripts/02_create_special_facility.sql",
+    "/scripts/03_create_call_forwarding.sql"
+  ],
+  "load_scripts": [
+    "/scripts/04_load_subscriber.sql",
+    "/scripts/05_load_access_info.sql",
+    "/scripts/06_load_special_facility.sql",
+    "/scripts/07_load_call_forwarding.sql",
+    "/scripts/08_create_urand.sql",
+    "/scripts/09_create_nurand.sql",
+    "/scripts/10_create_subrand.sql",
+    "/scripts/11_create_get_subscriber_data.sql",
+    "/scripts/12_create_get_new_destination.sql",
+    "/scripts/13_create_get_access_data.sql",
+    "/scripts/14_create_update_subscriber_data.sql",
+    "/scripts/15_create_update_location.sql",
+    "/scripts/16_insert_call_forwarding.sql",
+    "/scripts/17_delete_call_forwarding.sql"
+  ],
+  "pipeline_depth": 512,
+  "async_commit": "on",
+  "call_error_handling": "swallow"
+}

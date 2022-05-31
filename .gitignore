@@ -1,0 +1,7 @@
+cmake-build-*
+.idea
+perf.data
+perf.data.old
+benchmark/**/output
+docker/**/src
+build

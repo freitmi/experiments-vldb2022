@@ -1,0 +1,1 @@
+copy supplier from '/data/tpch/initial/supplier.tbl' delimiter '|';

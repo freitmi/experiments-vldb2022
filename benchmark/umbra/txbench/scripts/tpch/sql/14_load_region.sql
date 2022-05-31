@@ -1,0 +1,1 @@
+copy region from '/data/tpch/initial/region.tbl' delimiter '|';

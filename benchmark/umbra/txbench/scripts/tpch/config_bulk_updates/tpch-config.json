@@ -1,0 +1,6 @@
+{
+  "warmup_time": 30,
+  "measure_time": 30,
+  "refresh": true,
+  "bulk_operations": true
+}

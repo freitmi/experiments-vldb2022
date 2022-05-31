@@ -1,0 +1,1 @@
+copy lineitem from '/data/tpch/initial/lineitem.tbl' delimiter '|';

@@ -1,0 +1,3 @@
+add_library(picojson INTERFACE)
+target_compile_definitions(picojson INTERFACE PICOJSON_USE_INT64)
+target_include_directories(picojson INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

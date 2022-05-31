@@ -1,0 +1,14 @@
+#---------------------------------------------------------------------------
+# Copyright (c) 2022 TUM. All rights reserved.
+#---------------------------------------------------------------------------
+version: '2'
+
+services:
+  txbench-client:
+    image: gitlab.db.in.tum.de:5005/freitag/experiments-vldb-2022/txbench-client
+    environment:
+      - HOST_UID=${HOST_UID}
+      - HOST_GID=${HOST_GID}
+    privileged: true
+    volumes:
+      - ${HOST_DATA_DIR}:/data

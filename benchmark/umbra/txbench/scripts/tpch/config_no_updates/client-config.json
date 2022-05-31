@@ -1,0 +1,29 @@
+{
+  "host": "txbench-umbra",
+  "port": "5432",
+  "username": "postgres",
+  "password": "postgres",
+  "schema_scripts": [
+    "/scripts/00_create_part.sql",
+    "/scripts/01_create_supplier.sql",
+    "/scripts/02_create_partsupp.sql",
+    "/scripts/03_create_customer.sql",
+    "/scripts/04_create_orders.sql",
+    "/scripts/05_create_lineitem.sql",
+    "/scripts/06_create_nation.sql",
+    "/scripts/07_create_region.sql"
+  ],
+  "load_scripts": [
+    "/scripts/08_load_part.sql",
+    "/scripts/09_load_supplier.sql",
+    "/scripts/10_load_partsupp.sql",
+    "/scripts/11_load_customer.sql",
+    "/scripts/12_load_orders.sql",
+    "/scripts/13_load_lineitem.sql",
+    "/scripts/13_load_nation.sql",
+    "/scripts/14_load_region.sql"
+  ],
+  "pipeline_depth": 512,
+  "async_commit": "on",
+  "call_error_handling": "swallow"
+}

@@ -1,0 +1,1 @@
+copy part from '/data/tpch/initial/part.tbl' delimiter '|';

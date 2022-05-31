@@ -1,0 +1,46 @@
+#---------------------------------------------------------------------------
+# Copyright (c) 2022 TUM. All rights reserved.
+#---------------------------------------------------------------------------
+version: '2'
+
+services:
+  txbench-umbra:
+    image: gitlab.db.in.tum.de:5005/freitag/experiments-vldb-2022/txbench-umbra
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - HOST_UID=${HOST_UID}
+      - HOST_GID=${HOST_GID}
+    ports:
+      - "25432:5432"
+    privileged: true
+    volumes:
+      - ${HOST_DB_DIR}:/db
+      - ${HOST_DB_WAL_DIR}:/db/wal
+      - ${HOST_DATA_DIR}:/data
+      - ${HOST_CONFIG_DIR}:/config
+      - ${HOST_OUTPUT_DIR}:/output
+    networks:
+      txbench:
+        ipv4_address: 172.42.0.100
+  txbench-client:
+    image: gitlab.db.in.tum.de:5005/freitag/experiments-vldb-2022/txbench-client
+    environment:
+      - HOST_UID=${HOST_UID}
+      - HOST_GID=${HOST_GID}
+    privileged: true
+    volumes:
+      - ${HOST_CONFIG_DIR}:/config
+      - ${HOST_SCRIPT_DIR}:/scripts
+      - ${HOST_OUTPUT_DIR}:/output
+    depends_on:
+      - txbench-umbra
+    networks:
+      txbench:
+        ipv4_address: 172.42.0.200
+networks:
+  txbench:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.42.0.0/16
+          gateway: 172.42.0.1
